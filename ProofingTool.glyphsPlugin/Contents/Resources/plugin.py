@@ -11,8 +11,8 @@
 from __future__ import division, print_function, unicode_literals
 import objc
 import traceback
-from Cocoa import NSMenuItem, NSLog
-from GlyphsApp import Glyphs, FILE_MENU
+from Cocoa import NSLog
+from GlyphsApp import Glyphs, FILE_MENU, NSMenuItem
 from GlyphsApp.plugins import GeneralPlugin
 
 from proofing import OCCProofingTool
@@ -29,7 +29,7 @@ class ProofingTool(GeneralPlugin):
 		self.menuItem.setTarget_(self)
 
 		self.proofer = None
-
+	
 	@objc.python_method
 	def start(self):
 		Glyphs.menu[FILE_MENU].append(self.menuItem)
